@@ -7,12 +7,16 @@
     <title>Document</title>
 </head>
 <body>
+    {% if person %}
     <h1>users info</h1>
     <ul>
-        <li>{{person.name}}</li>
-        <li>{{person.phonenumber}}</li>
-        <li>{{person.email}}</li>
-        <li>{{person.address}}</li>
+        <li>{{person.name|default:"nothing"}}</li>
+        <li>{{person.phonenumber|default:"nothing"}}</li>
+        <li>{{person.email|default:"nothing"}}</li>
+        <li>{{person.address|default:"nothing"}}</li>
     </ul>
+    {% else %}
+    <li>Sorry, no person is here.</li>
+  {% endif %}
 </body>
 </html>
